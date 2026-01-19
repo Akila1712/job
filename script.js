@@ -1,23 +1,39 @@
-const steps = document.querySelectorAll('.step-content');
-const tabs = document.querySelectorAll('.step');
-let index = 0;
+const steps = document.querySelectorAll(".form-step");
+const nextBtns = document.querySelectorAll(".next-btn");
+const backBtns = document.querySelectorAll(".back-btn");
+const form = document.getElementById("trainerForm");
+const successMsg = document.getElementById("successMsg");
 
-function showStep(i) {
-  steps.forEach((s, n) => s.classList.toggle('active', n === i));
-  tabs.forEach((t, n) => t.classList.toggle('active', n === i));
+let currentStep = 0;
+
+function showStep(step) {
+  steps.forEach((s, i) => {
+    s.classList.toggle("active", i === step);
+  });
 }
 
-document.querySelectorAll('.btn-next').forEach(b =>
-  b.onclick = () => showStep(++index)
-);
+nextBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  });
+});
 
-document.querySelectorAll('.btn-back').forEach(b =>
-  b.onclick = () => showStep(--index)
-);
+backBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+});
 
-document.getElementById('form').onsubmit = e => {
+form.addEventListener("submit", e => {
   e.preventDefault();
-  showStep(++index);
-};
+  form.style.display = "none";
+  successMsg.classList.remove("d-none");
+});
 
-showStep(index);
+showStep(currentStep);

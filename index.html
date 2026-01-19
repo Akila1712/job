@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trainer Job Openings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="template-container">
+
+  <!-- Background image -->
+  <img src="images/paper-bg2.jpeg" class="template-img" alt="Template">
+
+  <!-- Paper content -->
+  <div class="paper-content">
+
+    <h4>Trainer Job Openings</h4>
+    <p class="small">Rajapalayam & Srivilliputhur</p>
+    <p class="intro">We are hiring passionate trainers to shape future learners.</p>
+
+    <p class="step-indicator">
+      Step <span id="stepNo">1</span> of 4
+    </p>
+
+    <form id="trainerForm">
+
+      <!-- STEP 1 -->
+      <div class="form-step active">
+        <div class="step-body">
+          <h6 class="fw-bold">Personal Details</h6>
+
+          <input type="text" class="form-control" placeholder="Full Name *" required>
+          <input type="tel" class="form-control" placeholder="Mobile Number *" required>
+          <input type="email" class="form-control" placeholder="Email ID *" required>
+          <input type="text" class="form-control" placeholder="City *" required>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn btn-primary w-100 next-btn">
+            Next →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step">
+        <div class="step-body">
+          <h6 class="fw-bold">Job Details</h6>
+
+          <label class="fw-semibold">Applying For *</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox"> Programming Trainer
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox"> Robotics Trainer
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox"> Abacus Trainer
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox"> Tally Trainer
+          </div>
+
+          <label class="fw-semibold">Preferred Location *</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="loc"> Rajapalayam
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="loc"> Srivilliputhur
+          </div>
+        </div>
+
+        <div class="step-actions d-flex gap-2">
+          <button type="button" class="btn btn-outline-secondary w-50 back-btn">
+            ← Back
+          </button>
+          <button type="button" class="btn btn-primary w-50 next-btn">
+            Next →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step">
+        <div class="step-body">
+          <h6 class="fw-bold">Professional Details</h6>
+
+          <input type="text" class="form-control" placeholder="Qualification *" required>
+
+          <select class="form-select">
+            <option value="">Experience</option>
+            <option>0 – 1 Year</option>
+            <option>1 – 2 Years</option>
+            <option>2 – 3 Years</option>
+            <option>More than 3 Years</option>
+          </select>
+
+          <textarea class="form-control" rows="2" placeholder="Skills *"></textarea>
+        </div>
+
+        <div class="step-actions d-flex gap-2">
+          <button type="button" class="btn btn-outline-secondary w-50 back-btn">
+            ← Back
+          </button>
+          <button type="button" class="btn btn-primary w-50 next-btn">
+            Next →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-step">
+        <div class="step-body">
+          <h6 class="fw-bold">Upload Documents</h6>
+
+          <input type="file" class="form-control mb-2" required>
+          <input type="file" class="form-control" required>
+        </div>
+
+        <div class="step-actions d-flex gap-2">
+          <button type="button" class="btn btn-outline-secondary w-50 back-btn">
+            ← Back
+          </button>
+          <button type="submit" class="btn btn-success w-50">
+            Submit
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+    <p id="successMsg" class="success-msg d-none">
+      ✅ Thank you for applying! Our team will contact you.
+    </p>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
