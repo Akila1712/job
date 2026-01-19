@@ -1,24 +1,48 @@
-body {
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
   background: #1e4e79; /* blue background */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
-/* Template wrapper */
+/* =========================
+   TEMPLATE CONTAINER
+========================= */
 .template-container {
   position: relative;
-  width: 590px; /* mobile width */
+  width: 100%;
+  max-width: 420px;        /* mobile default */
+  margin: auto;
 }
 
-/* Template image */
+/* =========================
+   TEMPLATE IMAGE
+========================= */
 .template-img {
   width: 100%;
   display: block;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
 }
 
-/* FORM INSIDE EMPTY YELLOW AREA */
+/* =========================
+   FORM CONTENT AREA
+========================= */
 .paper-content {
   position: absolute;
   top: 8%;
@@ -26,19 +50,25 @@ body {
   width: 80%;
   height: 60%;
   background: transparent;
-  padding: 8px;
+  padding: 10px;
   overflow-y: auto;
+  scrollbar-width: thin;
 }
 
-/* Text */
+/* =========================
+   TEXT STYLES
+========================= */
 .paper-content h4 {
   text-align: center;
   font-weight: 700;
+  font-size: 18px;
   color: #1f2937;
+  margin-bottom: 4px;
 }
 
 .paper-content .small {
   text-align: center;
+  font-size: 13px;
   color: #374151;
 }
 
@@ -46,18 +76,49 @@ body {
   text-align: center;
   font-size: 13px;
   color: #4b5563;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* Inputs */
+/* =========================
+   INPUTS
+========================= */
 .form-control,
 .form-select {
+  width: 100%;
   font-size: 14px;
-  border-radius: 10px;
-  margin-bottom: 8px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #d1d5db;
 }
 
-/* Steps */
+.form-control:focus,
+.form-select:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+  width: 100%;
+  background: #2563eb;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   MULTI STEP FORM
+========================= */
 .form-step {
   display: none;
 }
@@ -66,12 +127,61 @@ body {
   display: block;
 }
 
-/* Success */
+/* =========================
+   SUCCESS MESSAGE
+========================= */
 .success-msg {
   background: #dcfce7;
   color: #166534;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 12px;
   text-align: center;
   font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   DESKTOP VIEW
+========================= */
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+
+  .template-container {
+    max-width: 540px;
+  }
+
+  .paper-content {
+    top: 7%;
+    height: 65%;
+    padding: 14px;
+  }
+
+  .paper-content h4 {
+    font-size: 20px;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE FIX
+========================= */
+@media (max-width: 480px) {
+  .template-container {
+    max-width: 360px;
+  }
+
+  .paper-content {
+    top: 9%;
+    height: 58%;
+  }
+
+  .paper-content h4 {
+    font-size: 16px;
+  }
 }
