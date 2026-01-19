@@ -141,47 +141,31 @@ body {
 }
 
 /* =========================
-   DESKTOP VIEW
+   MOBILE VIEW ONLY
 ========================= */
-@media (min-width: 768px) {
+@media (max-width: 767px) {
+
   body {
-    padding: 40px;
+    background: #fff;          /* blue background remove */
+    padding: 0;
+    align-items: flex-start;   /* top align */
   }
 
   .template-container {
-    max-width: 540px;
+    max-width: 100%;
+    width: 100%;
+    min-height: 100vh;         /* full mobile screen */
+  }
+
+  .template-img {
+    border-radius: 0;          /* edge-to-edge image */
+    box-shadow: none;
   }
 
   .paper-content {
-    top: 7%;
-    height: 65%;
-    padding: 14px;
-  }
-
-  .paper-content h4 {
-    font-size: 20px;
-  }
-
-  .form-control,
-  .form-select {
-    font-size: 15px;
-  }
-}
-
-/* =========================
-   SMALL MOBILE FIX
-========================= */
-@media (max-width: 480px) {
-  .template-container {
-    max-width: 360px;
-  }
-
-  .paper-content {
-    top: 9%;
-    height: 58%;
-  }
-
-  .paper-content h4 {
-    font-size: 16px;
+    top: 8%;
+    left: 8%;
+    width: 84%;
+    height: 62%;
   }
 }
