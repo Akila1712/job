@@ -1,22 +1,23 @@
-const steps = document.querySelectorAll('.form-step');
-const indicators = document.querySelectorAll('.step');
-let current = 0;
+const steps = document.querySelectorAll('.step-content');
+const tabs = document.querySelectorAll('.step');
+let index = 0;
 
-function updateSteps() {
-  steps.forEach((s, i) => s.classList.toggle('active', i === current));
-  indicators.forEach((s, i) => s.classList.toggle('active', i === current));
+function showStep(i) {
+  steps.forEach((s, n) => s.classList.toggle('active', n === i));
+  tabs.forEach((t, n) => t.classList.toggle('active', n === i));
 }
 
-document.querySelectorAll('.next').forEach(btn =>
-  btn.onclick = () => { current++; updateSteps(); }
+document.querySelectorAll('.btn-next').forEach(b =>
+  b.onclick = () => showStep(++index)
 );
 
-document.querySelectorAll('.back').forEach(btn =>
-  btn.onclick = () => { current--; updateSteps(); }
+document.querySelectorAll('.btn-back').forEach(b =>
+  b.onclick = () => showStep(--index)
 );
 
 document.getElementById('form').onsubmit = e => {
   e.preventDefault();
-  current++;
-  updateSteps();
+  showStep(++index);
 };
+
+showStep(index);
